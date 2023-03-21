@@ -14,7 +14,7 @@ class CocktailHomeTableViewCell: UITableViewCell {
     //MARK: - Outlets
     @IBOutlet weak var containerView: UIView! {
         didSet {
-            containerView.layer.borderColor = UIColor.lightGray.cgColor
+            containerView.layer.borderColor = UIColor.borderColor.cgColor
             containerView.layer.borderWidth = 1.0
             containerView.layer.cornerRadius = 10
             containerView.clipsToBounds = true
@@ -23,6 +23,7 @@ class CocktailHomeTableViewCell: UITableViewCell {
     
     @IBOutlet weak var cocktailImageView: UIImageView! {
         didSet {
+            cocktailImageView.layer.cornerRadius = 10
             cocktailImageView.layer.masksToBounds = true
         }
     }

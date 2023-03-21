@@ -17,17 +17,24 @@ class CocktailHomeViewController: UIViewController {
     //MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
     
-    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var containerView: UIView! {
+        didSet {
+            containerView.backgroundColor = .navigationBar
+        }
+    }
     
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel! {
+        didSet {
+            titleLabel.textColor = .white
+            titleLabel.text = "Cocktails"
+        }
+    }
     
     @IBOutlet weak var searchButton: UIButton!
     
     
     //MARK: - Variables
     var presenter : CocktailHomePresenterProtocol?
-    
-    //Ideally inside a view model
     var cocktails: [CocktailModel]?
     
     
@@ -36,6 +43,7 @@ class CocktailHomeViewController: UIViewController {
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.separatorStyle = .none
+        self.tableView.backgroundColor = .tableViewColor
         
         self.tableView.register(UINib(nibName: CocktailHomeTableViewCell.identifier, bundle: nil),
                                 forCellReuseIdentifier: CocktailHomeTableViewCell.identifier)
@@ -58,6 +66,13 @@ class CocktailHomeViewController: UIViewController {
     private func fetchCocktailList() {
         self.presenter?.fetchCocktailList()
     }
+    
+    
+    //MARK: - Button actions
+    @IBAction func searchButtonSelected(_ sender: Any) {
+        self.presenter?.router?.presentSearchViewController()
+    }
+    
 }
 
 
@@ -85,11 +100,8 @@ extension CocktailHomeViewController: UITableViewDataSource, UITableViewDelegate
 extension CocktailHomeViewController: CocktailHomeViewProtocol {
     
     func updateOnSuccess(with cocktails: [CocktailModel]) {
-        
-        DispatchQueue.main.async {
-            self.cocktails = cocktails
-            self.tableView.reloadData()
-        }
+        self.cocktails = cocktails
+        self.tableView.reloadData()
     }
     
     func updateOnFailure(with error: String) {}

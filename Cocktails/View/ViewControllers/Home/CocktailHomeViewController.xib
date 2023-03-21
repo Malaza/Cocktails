@@ -30,29 +30,35 @@
                     <rect key="frame" x="0.0" y="0.0" width="393" height="120"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lc4-W4-VsX">
-                            <rect key="frame" x="173.66666666666666" y="0.0" width="45.666666666666657" height="120"/>
-                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                            <rect key="frame" x="169.66666666666666" y="70" width="53.666666666666657" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="Pyo-Hb-9kd"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="20"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kxJ-Ec-lnc">
-                            <rect key="frame" x="333" y="0.0" width="60" height="120"/>
+                            <rect key="frame" x="333" y="70" width="60" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="60" id="J4h-MS-tQi"/>
+                                <constraint firstAttribute="height" constant="50" id="w2M-EH-fWX"/>
                             </constraints>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="magnifyingglass" catalog="system"/>
+                            <connections>
+                                <action selector="searchButtonSelected:" destination="-1" eventType="touchUpInside" id="uNc-3o-aiw"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstItem="kxJ-Ec-lnc" firstAttribute="top" secondItem="blR-li-YsB" secondAttribute="top" id="2dn-01-3sN"/>
                         <constraint firstItem="Lc4-W4-VsX" firstAttribute="centerX" secondItem="blR-li-YsB" secondAttribute="centerX" id="9lh-rS-BCB"/>
                         <constraint firstAttribute="trailing" secondItem="kxJ-Ec-lnc" secondAttribute="trailing" id="Bnn-6V-px5"/>
                         <constraint firstAttribute="bottom" secondItem="Lc4-W4-VsX" secondAttribute="bottom" id="T0S-WE-iak"/>
                         <constraint firstAttribute="height" constant="120" id="Ymn-pv-1yq"/>
                         <constraint firstAttribute="bottom" secondItem="kxJ-Ec-lnc" secondAttribute="bottom" id="r8D-Ih-PRh"/>
-                        <constraint firstItem="Lc4-W4-VsX" firstAttribute="top" secondItem="blR-li-YsB" secondAttribute="top" id="zHh-Cc-5UY"/>
                     </constraints>
                 </view>
             </subviews>

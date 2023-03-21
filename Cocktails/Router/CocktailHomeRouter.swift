@@ -8,12 +8,12 @@
 import UIKit
 
 class CocktailHomeRouter: CocktailHomeRouterProtocol {
-
+    
     //MARK: - Variables
     var view: (CocktailHomeViewProtocol & UIViewController)?
     
     
-    static func start() -> CocktailHomeRouter {
+    static func start() -> CocktailHomeViewController {
         
         let router = CocktailHomeRouter()
         
@@ -33,8 +33,16 @@ class CocktailHomeRouter: CocktailHomeRouterProtocol {
         
         router.view = view
         
-        return router
+        return view
     }
     
     //MARK: - Navigation
+    func presentDetailViewController(with model: CocktailModel) {
+        let viewController =
+        self.view?.navigationController?.present(viewController, animated: true)
+    }
+    
+    func presentSearchViewController() {
+        
+    }
 }
