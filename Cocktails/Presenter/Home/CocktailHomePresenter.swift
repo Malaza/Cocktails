@@ -13,11 +13,23 @@ class CocktailHomePresenter: CocktailHomePresenterProtocol {
     var view: CocktailHomeViewProtocol?
     var interactor: CocktailHomeInteractorProtocol?
     
+    
+    //MARK: - Input
     func fetchCocktailList() {
         self.interactor?.fetchCocktailList()
     }
     
     func searchCocktailsWithQuery(query: String) {
         self.interactor?.searchCocktailsWithQuery(query: query)
+    }
+    
+    
+    //MARK: - Output
+    func interactorDidFetchCocktailList(with result: Result<[Cocktail], Error>) {
+        
+    }
+    
+    func interactorDidSearchForCocktail(with result: Result<[Cocktail ], Error>) {
+        
     }
 }

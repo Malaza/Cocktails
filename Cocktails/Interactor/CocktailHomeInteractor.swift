@@ -18,7 +18,7 @@ class CocktailHomeInteractor: CocktailHomeInteractorProtocol {
         
         self.service?.executeFetchList(completion: { (response, error) in
             
-            guar
+//            guar
         })
     }
     
