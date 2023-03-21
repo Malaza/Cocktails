@@ -16,9 +16,20 @@ class CocktailHomeInteractor: CocktailHomeInteractorProtocol {
     
     func fetchCocktailList() {
         
-        self.service?.executeFetchList(completion: { (response, error) in
+        self.service?.executeFetchList(completion: { (data, error) in
             
-//            guar
+            guard let data = data as? Data, error == nil else {
+                self.presenter?.interactorDidFetchCocktailList(with: .failure(CocktailServiceError.failed))
+                return
+            }
+            
+            do {
+                let cocktails = try JSONDecoder().decode(DrinksResponse.self, from: data)
+                self.presenter?.interactorDidFetchCocktailList(with: .success(cocktails.drinks))
+            }
+            catch {
+                self.presenter?.interactorDidFetchCocktailList(with: .failure(error))
+            }
         })
     }
     

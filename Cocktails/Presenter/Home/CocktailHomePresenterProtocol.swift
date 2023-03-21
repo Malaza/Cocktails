@@ -20,6 +20,6 @@ protocol CocktailHomePresenterProtocol {
     
     
     //MARK: - Output
-    func interactorDidFetchCocktailList(with result: Result<[Cocktail], Error>)
-    func interactorDidSearchForCocktail(with result: Result<[Cocktail], Error>) 
+    func interactorDidFetchCocktailList(with result: Result<[CocktailResponse], Error>)
+    func interactorDidSearchForCocktail(with result: Result<[CocktailResponse], Error>)
 }

@@ -7,7 +7,11 @@
 
 import Foundation
 
-struct Cocktail: Codable {
+struct DrinksResponse: Codable {
+    var drinks: [CocktailResponse]
+}
+
+struct CocktailResponse: Codable {
     var idDrink: String?
     var strDrink: String?
     var strDrinkAlternate: String?
