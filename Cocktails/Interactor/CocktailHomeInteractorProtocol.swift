@@ -11,4 +11,8 @@ import Foundation
 protocol CocktailHomeInteractorProtocol {
     
     var presenter: CocktailHomePresenterProtocol? { get set }
+    var service: CocktailServiceProtocol? { get set }
+    
+    func fetchCocktailList()
+    func searchCocktailsWithQuery(query: String)
 }

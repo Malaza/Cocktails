@@ -13,4 +13,6 @@ protocol CocktailHomePresenterProtocol {
     var view: CocktailHomeViewProtocol? { get set }
     var interactor: CocktailHomeInteractorProtocol? { get set }
     
+    func fetchCocktailList()
+    func searchCocktailsWithQuery(query: String)
 }

@@ -20,10 +20,12 @@ class CocktailHomeRouter: CocktailHomeRouterProtocol {
         let presenter = CocktailHomePresenter()
         let view = CocktailHomeViewController()
         let interactor = CocktailHomeInteractor()
+        let service = CocktailService()
         
         view.presenter = presenter
         
         interactor.presenter = presenter
+        interactor.service = service
         
         presenter.router = router
         presenter.view = view

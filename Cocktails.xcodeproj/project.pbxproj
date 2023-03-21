@@ -24,6 +24,7 @@
 		59DA0D8229C9B1C700A6910D /* CocktailHomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DA0D8129C9B1C700A6910D /* CocktailHomeRouter.swift */; };
 		59DA0D8429C9B72200A6910D /* CocktailHomeInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DA0D8329C9B72200A6910D /* CocktailHomeInteractorProtocol.swift */; };
 		59DA0D8629C9B72C00A6910D /* CocktailHomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DA0D8529C9B72C00A6910D /* CocktailHomeInteractor.swift */; };
+		59DA0D8929C9C2A600A6910D /* CocktailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DA0D8829C9C2A600A6910D /* CocktailService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		59DA0D8129C9B1C700A6910D /* CocktailHomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailHomeRouter.swift; sourceTree = "<group>"; };
 		59DA0D8329C9B72200A6910D /* CocktailHomeInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailHomeInteractorProtocol.swift; sourceTree = "<group>"; };
 		59DA0D8529C9B72C00A6910D /* CocktailHomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailHomeInteractor.swift; sourceTree = "<group>"; };
+		59DA0D8829C9C2A600A6910D /* CocktailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,8 @@
 		59DA0D3829C99B5B00A6910D /* Cocktails */ = {
 			isa = PBXGroup;
 			children = (
+				59DA0D8A29C9CECE00A6910D /* Entity */,
+				59DA0D8729C9C28400A6910D /* Service */,
 				59DA0D7129C9A65700A6910D /* Presenter */,
 				59DA0D7029C9A65000A6910D /* Interactor */,
 				59DA0D6F29C9A64B00A6910D /* View */,
@@ -229,6 +233,21 @@
 				59DA0D7B29C9A85000A6910D /* CocktailHomePresenter.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		59DA0D8729C9C28400A6910D /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				59DA0D8829C9C2A600A6910D /* CocktailService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		59DA0D8A29C9CECE00A6910D /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -372,6 +391,7 @@
 				59DA0D7629C9A70800A6910D /* CocktailHomeViewController.swift in Sources */,
 				59DA0D8629C9B72C00A6910D /* CocktailHomeInteractor.swift in Sources */,
 				59DA0D3C29C99B5B00A6910D /* SceneDelegate.swift in Sources */,
+				59DA0D8929C9C2A600A6910D /* CocktailService.swift in Sources */,
 				59DA0D7E29C9A87F00A6910D /* CocktailHomePresenterProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
