@@ -16,6 +16,14 @@
 		59DA0D5129C99B5D00A6910D /* CocktailsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DA0D5029C99B5D00A6910D /* CocktailsTests.swift */; };
 		59DA0D5B29C99B5D00A6910D /* CocktailsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DA0D5A29C99B5D00A6910D /* CocktailsUITests.swift */; };
 		59DA0D5D29C99B5D00A6910D /* CocktailsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DA0D5C29C99B5D00A6910D /* CocktailsUITestsLaunchTests.swift */; };
+		59DA0D7629C9A70800A6910D /* CocktailHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DA0D7429C9A70800A6910D /* CocktailHomeViewController.swift */; };
+		59DA0D7729C9A70800A6910D /* CocktailHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59DA0D7529C9A70800A6910D /* CocktailHomeViewController.xib */; };
+		59DA0D7C29C9A85000A6910D /* CocktailHomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DA0D7B29C9A85000A6910D /* CocktailHomePresenter.swift */; };
+		59DA0D7E29C9A87F00A6910D /* CocktailHomePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DA0D7D29C9A87F00A6910D /* CocktailHomePresenterProtocol.swift */; };
+		59DA0D8029C9B1B600A6910D /* CocktailHomeRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DA0D7F29C9B1B600A6910D /* CocktailHomeRouterProtocol.swift */; };
+		59DA0D8229C9B1C700A6910D /* CocktailHomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DA0D8129C9B1C700A6910D /* CocktailHomeRouter.swift */; };
+		59DA0D8429C9B72200A6910D /* CocktailHomeInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DA0D8329C9B72200A6910D /* CocktailHomeInteractorProtocol.swift */; };
+		59DA0D8629C9B72C00A6910D /* CocktailHomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DA0D8529C9B72C00A6910D /* CocktailHomeInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +57,14 @@
 		59DA0D5629C99B5D00A6910D /* CocktailsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocktailsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		59DA0D5A29C99B5D00A6910D /* CocktailsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailsUITests.swift; sourceTree = "<group>"; };
 		59DA0D5C29C99B5D00A6910D /* CocktailsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		59DA0D7429C9A70800A6910D /* CocktailHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailHomeViewController.swift; sourceTree = "<group>"; };
+		59DA0D7529C9A70800A6910D /* CocktailHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CocktailHomeViewController.xib; sourceTree = "<group>"; };
+		59DA0D7B29C9A85000A6910D /* CocktailHomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailHomePresenter.swift; sourceTree = "<group>"; };
+		59DA0D7D29C9A87F00A6910D /* CocktailHomePresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailHomePresenterProtocol.swift; sourceTree = "<group>"; };
+		59DA0D7F29C9B1B600A6910D /* CocktailHomeRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailHomeRouterProtocol.swift; sourceTree = "<group>"; };
+		59DA0D8129C9B1C700A6910D /* CocktailHomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailHomeRouter.swift; sourceTree = "<group>"; };
+		59DA0D8329C9B72200A6910D /* CocktailHomeInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailHomeInteractorProtocol.swift; sourceTree = "<group>"; };
+		59DA0D8529C9B72C00A6910D /* CocktailHomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailHomeInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,12 +115,12 @@
 		59DA0D3829C99B5B00A6910D /* Cocktails */ = {
 			isa = PBXGroup;
 			children = (
-				59DA0D3929C99B5B00A6910D /* AppDelegate.swift */,
-				59DA0D3B29C99B5B00A6910D /* SceneDelegate.swift */,
-				59DA0D3D29C99B5B00A6910D /* ViewController.swift */,
-				59DA0D3F29C99B5B00A6910D /* Main.storyboard */,
+				59DA0D7129C9A65700A6910D /* Presenter */,
+				59DA0D7029C9A65000A6910D /* Interactor */,
+				59DA0D6F29C9A64B00A6910D /* View */,
+				59DA0D6A29C9A56700A6910D /* Router */,
+				59DA0D6929C9A4C000A6910D /* AppDelegate */,
 				59DA0D4229C99B5D00A6910D /* Assets.xcassets */,
-				59DA0D4429C99B5D00A6910D /* LaunchScreen.storyboard */,
 				59DA0D4729C99B5D00A6910D /* Info.plist */,
 			);
 			path = Cocktails;
@@ -125,6 +141,94 @@
 				59DA0D5C29C99B5D00A6910D /* CocktailsUITestsLaunchTests.swift */,
 			);
 			path = CocktailsUITests;
+			sourceTree = "<group>";
+		};
+		59DA0D6929C9A4C000A6910D /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				59DA0D3929C99B5B00A6910D /* AppDelegate.swift */,
+				59DA0D3B29C99B5B00A6910D /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		59DA0D6A29C9A56700A6910D /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				59DA0D7F29C9B1B600A6910D /* CocktailHomeRouterProtocol.swift */,
+				59DA0D8129C9B1C700A6910D /* CocktailHomeRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		59DA0D6F29C9A64B00A6910D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				59DA0D7329C9A67000A6910D /* ViewControllers */,
+				59DA0D7229C9A66700A6910D /* Views */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		59DA0D7029C9A65000A6910D /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				59DA0D8329C9B72200A6910D /* CocktailHomeInteractorProtocol.swift */,
+				59DA0D8529C9B72C00A6910D /* CocktailHomeInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		59DA0D7129C9A65700A6910D /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				59DA0D7A29C9A83000A6910D /* Home */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		59DA0D7229C9A66700A6910D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		59DA0D7329C9A67000A6910D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				59DA0D7829C9A72D00A6910D /* Base */,
+				59DA0D7929C9A74500A6910D /* Home */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		59DA0D7829C9A72D00A6910D /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				59DA0D4429C99B5D00A6910D /* LaunchScreen.storyboard */,
+				59DA0D3F29C99B5B00A6910D /* Main.storyboard */,
+				59DA0D3D29C99B5B00A6910D /* ViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		59DA0D7929C9A74500A6910D /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				59DA0D7429C9A70800A6910D /* CocktailHomeViewController.swift */,
+				59DA0D7529C9A70800A6910D /* CocktailHomeViewController.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		59DA0D7A29C9A83000A6910D /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				59DA0D7D29C9A87F00A6910D /* CocktailHomePresenterProtocol.swift */,
+				59DA0D7B29C9A85000A6910D /* CocktailHomePresenter.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				59DA0D4629C99B5D00A6910D /* LaunchScreen.storyboard in Resources */,
+				59DA0D7729C9A70800A6910D /* CocktailHomeViewController.xib in Resources */,
 				59DA0D4329C99B5D00A6910D /* Assets.xcassets in Resources */,
 				59DA0D4129C99B5B00A6910D /* Main.storyboard in Resources */,
 			);
@@ -260,7 +365,14 @@
 			files = (
 				59DA0D3E29C99B5B00A6910D /* ViewController.swift in Sources */,
 				59DA0D3A29C99B5B00A6910D /* AppDelegate.swift in Sources */,
+				59DA0D8229C9B1C700A6910D /* CocktailHomeRouter.swift in Sources */,
+				59DA0D7C29C9A85000A6910D /* CocktailHomePresenter.swift in Sources */,
+				59DA0D8429C9B72200A6910D /* CocktailHomeInteractorProtocol.swift in Sources */,
+				59DA0D8029C9B1B600A6910D /* CocktailHomeRouterProtocol.swift in Sources */,
+				59DA0D7629C9A70800A6910D /* CocktailHomeViewController.swift in Sources */,
+				59DA0D8629C9B72C00A6910D /* CocktailHomeInteractor.swift in Sources */,
 				59DA0D3C29C99B5B00A6910D /* SceneDelegate.swift in Sources */,
+				59DA0D7E29C9A87F00A6910D /* CocktailHomePresenterProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +551,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cocktails/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -466,6 +579,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cocktails/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
