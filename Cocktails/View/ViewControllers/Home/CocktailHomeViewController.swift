@@ -19,7 +19,7 @@ class CocktailHomeViewController: UIViewController {
     
     @IBOutlet weak var containerView: UIView! {
         didSet {
-            containerView.backgroundColor = .navigationBar
+            containerView.backgroundColor = .navigationBarColor
         }
     }
     
@@ -30,12 +30,13 @@ class CocktailHomeViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     
     //MARK: - Variables
-    var presenter : CocktailHomePresenterProtocol?
+    var presenter: CocktailHomePresenterProtocol?
     var cocktails: [CocktailModel]?
+    let refreshControl = UIRefreshControl()
     
     
     //MARK: - Setup
@@ -45,8 +46,15 @@ class CocktailHomeViewController: UIViewController {
         self.tableView.separatorStyle = .none
         self.tableView.backgroundColor = .tableViewColor
         
+        self.refreshControl.addTarget(self, action: #selector(refreshTableView), for: .valueChanged)
+        self.tableView.refreshControl = refreshControl
+        
         self.tableView.register(UINib(nibName: CocktailHomeTableViewCell.identifier, bundle: nil),
                                 forCellReuseIdentifier: CocktailHomeTableViewCell.identifier)
+    }
+    
+    private func setupSearchBar() {
+        self.searchBar.delegate = self
     }
     
     
@@ -67,12 +75,9 @@ class CocktailHomeViewController: UIViewController {
         self.presenter?.fetchCocktailList()
     }
     
-    
-    //MARK: - Button actions
-    @IBAction func searchButtonSelected(_ sender: Any) {
-        self.presenter?.router?.presentSearchViewController()
+    @objc private func refreshTableView() {
+        self.fetchCocktailList()
     }
-    
 }
 
 
@@ -85,7 +90,8 @@ extension CocktailHomeViewController: UITableViewDataSource, UITableViewDelegate
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: CocktailHomeTableViewCell.identifier, for: indexPath) as? CocktailHomeTableViewCell {
-            cell.configureWithModel(model: self.cocktails?[indexPath.row])
+            let model = self.cocktails?[indexPath.row]
+            cell.configureWithModel(model: model)
             return cell
         }
         return UITableViewCell()
@@ -94,6 +100,21 @@ extension CocktailHomeViewController: UITableViewDataSource, UITableViewDelegate
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 110
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.presenter?.router?.presentDetailViewController(with: self.cocktails?[indexPath.row])
+    }
+}
+
+extension CocktailHomeViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        if searchText.count > 1 {
+            self.cocktails = cocktails?.filter( { $0.strDrink?.range(of: searchText, options: .caseInsensitive) != nil } )
+            self.tableView.reloadData()
+        }
+    }
 }
 
 
@@ -101,8 +122,14 @@ extension CocktailHomeViewController: CocktailHomeViewProtocol {
     
     func updateOnSuccess(with cocktails: [CocktailModel]) {
         self.cocktails = cocktails
+        
+        if refreshControl.isRefreshing {
+            self.refreshControl.endRefreshing()
+        }
         self.tableView.reloadData()
     }
     
-    func updateOnFailure(with error: String) {}
+    func updateOnFailure(with error: String) {
+        //Add retry mech
+    }
 }

@@ -72,14 +72,14 @@ class CocktailHomeTableViewCell: UITableViewCell {
         attrHeading = NSMutableAttributedString(string: title)
         let range = NSRange.init(location: 0, length: title.count)
         attrHeading.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 17, weight: .semibold), range: range)
-        attrHeading.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.red, range: range)
+        attrHeading.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.headingTextColor, range: range)
         mainAttributedString.append(attrHeading)
         
         let stringFormat = String(format: "\n\(category)")
         attrContent = NSMutableAttributedString(string: stringFormat)
         let thisRange = NSRange.init(location: 0, length: stringFormat.count)
         attrContent.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 14, weight: .regular), range: thisRange)
-        attrContent.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.black, range: thisRange)
+        attrContent.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.gray, range: thisRange)
         mainAttributedString.append(attrContent)
         
         mainAttributedString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle,

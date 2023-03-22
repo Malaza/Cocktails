@@ -11,7 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CocktailHomeViewController" customModule="Cocktails" customModuleProvider="target">
             <connections>
                 <outlet property="containerView" destination="blR-li-YsB" id="gWT-rr-gvW"/>
-                <outlet property="searchButton" destination="kxJ-Ec-lnc" id="8fc-40-HyT"/>
+                <outlet property="searchBar" destination="doD-u4-Oof" id="Yx8-rg-QIr"/>
                 <outlet property="tableView" destination="kp9-bC-KNh" id="Xdb-Gc-FmG"/>
                 <outlet property="titleLabel" destination="Lc4-W4-VsX" id="Umh-aQ-Ajp"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -22,15 +22,11 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="kp9-bC-KNh">
-                    <rect key="frame" x="0.0" y="120" width="393" height="698"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="blR-li-YsB">
                     <rect key="frame" x="0.0" y="0.0" width="393" height="120"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lc4-W4-VsX">
-                            <rect key="frame" x="169.66666666666666" y="70" width="53.666666666666657" height="50"/>
+                            <rect key="frame" x="30" y="70" width="333" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="Pyo-Hb-9kd"/>
                             </constraints>
@@ -38,46 +34,46 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kxJ-Ec-lnc">
-                            <rect key="frame" x="333" y="70" width="60" height="50"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="60" id="J4h-MS-tQi"/>
-                                <constraint firstAttribute="height" constant="50" id="w2M-EH-fWX"/>
-                            </constraints>
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                            <state key="normal" image="magnifyingglass" catalog="system"/>
-                            <connections>
-                                <action selector="searchButtonSelected:" destination="-1" eventType="touchUpInside" id="uNc-3o-aiw"/>
-                            </connections>
-                        </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="Lc4-W4-VsX" firstAttribute="centerX" secondItem="blR-li-YsB" secondAttribute="centerX" id="9lh-rS-BCB"/>
-                        <constraint firstAttribute="trailing" secondItem="kxJ-Ec-lnc" secondAttribute="trailing" id="Bnn-6V-px5"/>
+                        <constraint firstItem="Lc4-W4-VsX" firstAttribute="leading" secondItem="blR-li-YsB" secondAttribute="leading" constant="30" id="F7p-WU-heY"/>
                         <constraint firstAttribute="bottom" secondItem="Lc4-W4-VsX" secondAttribute="bottom" id="T0S-WE-iak"/>
                         <constraint firstAttribute="height" constant="120" id="Ymn-pv-1yq"/>
-                        <constraint firstAttribute="bottom" secondItem="kxJ-Ec-lnc" secondAttribute="bottom" id="r8D-Ih-PRh"/>
+                        <constraint firstAttribute="trailing" secondItem="Lc4-W4-VsX" secondAttribute="trailing" constant="30" id="gXe-9u-syR"/>
                     </constraints>
                 </view>
+                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="doD-u4-Oof">
+                    <rect key="frame" x="0.0" y="120" width="393" height="56"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="glV-BO-KWV"/>
+                    </connections>
+                </searchBar>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="kp9-bC-KNh">
+                    <rect key="frame" x="0.0" y="176" width="393" height="642"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="kp9-bC-KNh" firstAttribute="top" secondItem="blR-li-YsB" secondAttribute="bottom" id="DvK-vP-o2U"/>
+                <constraint firstItem="doD-u4-Oof" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="MbG-oK-TTc"/>
                 <constraint firstItem="blR-li-YsB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Qzc-ah-FFU"/>
+                <constraint firstItem="doD-u4-Oof" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="VgQ-vr-1WX"/>
                 <constraint firstItem="kp9-bC-KNh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="a4J-Zz-uiO"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="kp9-bC-KNh" secondAttribute="bottom" id="bHw-Jg-jEY"/>
                 <constraint firstItem="blR-li-YsB" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="c7J-7S-jcz"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="kp9-bC-KNh" secondAttribute="trailing" id="hJC-B2-25e"/>
+                <constraint firstItem="doD-u4-Oof" firstAttribute="top" secondItem="blR-li-YsB" secondAttribute="bottom" id="oVO-WW-1ZP"/>
+                <constraint firstItem="kp9-bC-KNh" firstAttribute="top" secondItem="doD-u4-Oof" secondAttribute="bottom" id="v6T-Xa-5Tp"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="blR-li-YsB" secondAttribute="trailing" id="wMC-VE-ThT"/>
             </constraints>
             <point key="canvasLocation" x="5.343511450381679" y="20.422535211267608"/>
         </view>
     </objects>
     <resources>
-        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -14,8 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        let view = CocktailHomeRouter.start()
-        let viewController = view
+        let router = CocktailHomeRouter.start()
+        let viewController = router.view
         
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.rootViewController = viewController
