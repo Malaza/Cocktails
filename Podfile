@@ -5,12 +5,11 @@ target 'Cocktails' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-pod 'lottie-ios'
-pod 'Cuckoo'
+  pod 'lottie-ios'
 
   target 'CocktailsTests' do
     inherit! :search_paths
-    # Pods for testing
+    pod 'Cuckoo'
   end
 
   target 'CocktailsUITests' do

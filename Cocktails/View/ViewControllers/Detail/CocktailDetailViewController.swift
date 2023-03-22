@@ -24,13 +24,27 @@ class CocktailDetailViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var cocktailTitleLabel: UILabel!
+    @IBOutlet weak var cocktailTitleLabel: UILabel! {
+        didSet {
+            cocktailTitleLabel.numberOfLines = 0
+        }
+    }
     
     @IBOutlet weak var cocktailImageView: UIImageView!
     
-    @IBOutlet weak var instructionsLabel: UILabel!
+    @IBOutlet weak var instructionsLabel: UILabel! {
+        didSet {
+            instructionsLabel.numberOfLines = 0
+            instructionsLabel.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+        }
+    }
     
-    @IBOutlet weak var ingredientsLabel: UILabel!
+    @IBOutlet weak var ingredientsLabel: UILabel! {
+        didSet {
+            ingredientsLabel.numberOfLines = 0
+            ingredientsLabel.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        }
+    }
     
     
     //MARK: - Variables
@@ -54,16 +68,21 @@ class CocktailDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.configureViewWithModel(model: self.cocktailModel)
+    }
 
-    private func configureViewWithModel(model: CocktailModel) {
+    private func configureViewWithModel(model: CocktailModel?) {
         
-        self.cocktailTitleLabel.attributedText = self.attributedStringForTitle(title: model.strDrink ?? "", category: model.strCategory ?? "")
+        self.cocktailTitleLabel.attributedText = self.attributedStringForTitle(title: model?.strDrink ?? "", category: model?.strCategory ?? "")
         
-        self.cocktailImageView.loadThumbnail(urlSting: model.strImageSource ?? "")
+        self.cocktailImageView.loadThumbnail(urlSting: model?.strDrinkThumb ?? "")
         
-        self.instructionsLabel.text = model.strInstructions
+        self.instructionsLabel.text = model?.strInstructions
         
-        self.ingredientsLabel.text = model.strIngredient1
+        self.ingredientsLabel.text = self.ingredientsForCocktail(cocktail: model)
     }
     
     
@@ -75,13 +94,13 @@ class CocktailDetailViewController: UIViewController {
         let mainAttributedString = NSMutableAttributedString()
         
         let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.alignment = .left
+        paragraphStyle.alignment = .center
         paragraphStyle.paragraphSpacing = 6.0
         
         attrHeading = NSMutableAttributedString(string: title)
         let range = NSRange.init(location: 0, length: title.count)
-        attrHeading.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 17, weight: .semibold), range: range)
-        attrHeading.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.red, range: range)
+        attrHeading.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 30, weight: .semibold), range: range)
+        attrHeading.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.headingTextColor, range: range)
         mainAttributedString.append(attrHeading)
         
         let stringFormat = String(format: "\n\(category)")
@@ -95,5 +114,9 @@ class CocktailDetailViewController: UIViewController {
                                           range: NSRange.init(location: 0, length: mainAttributedString.length))
         
         return mainAttributedString
+    }
+    
+    private func ingredientsForCocktail(cocktail: CocktailModel?) -> String {
+        return "\(cocktail?.strIngredient1 ?? ""), \(cocktail?.strIngredient2 ?? ""), \(cocktail?.strIngredient3 ?? ""), \(cocktail?.strIngredient4 ?? ""), \(cocktail?.strIngredient5 ?? "")"
     }
 }

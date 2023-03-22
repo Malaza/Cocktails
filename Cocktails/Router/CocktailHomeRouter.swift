@@ -36,10 +36,9 @@ class CocktailHomeRouter: CocktailHomeRouterProtocol {
     }
     
     //MARK: - Navigation
-    func presentDetailViewController(with model: CocktailModel?) {
+    func presentDetailViewController(controller: UIViewController, model: CocktailModel?) {
         let viewController = CocktailDetailViewController(cocktailModel: model)
-        let nav = UINavigationController(rootViewController: viewController)
-        nav.pushViewController(viewController, animated: true)
+        controller.navigationController?.pushViewController(viewController, animated: true)
     }
     
     func presentSearchViewController() {

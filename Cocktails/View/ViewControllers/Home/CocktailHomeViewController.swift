@@ -102,7 +102,7 @@ extension CocktailHomeViewController: UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.presenter?.router?.presentDetailViewController(with: self.cocktails?[indexPath.row])
+        self.presenter?.router?.presentDetailViewController(controller: self, model: self.cocktails?[indexPath.row])
     }
 }
 

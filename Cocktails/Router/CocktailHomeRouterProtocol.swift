@@ -14,6 +14,6 @@ protocol CocktailHomeRouterProtocol {
     static func start() -> CocktailHomeRouterProtocol
     
     
-    func presentDetailViewController(with model: CocktailModel?)
+    func presentDetailViewController(controller: UIViewController, model: CocktailModel?)
     func presentSearchViewController()
 }

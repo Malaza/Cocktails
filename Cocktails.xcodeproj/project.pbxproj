@@ -390,6 +390,7 @@
 				59DA0D4829C99B5D00A6910D /* Sources */,
 				59DA0D4929C99B5D00A6910D /* Frameworks */,
 				59DA0D4A29C99B5D00A6910D /* Resources */,
+				AAC044599551B035115C1888 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -555,6 +556,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Cocktails/Pods-Cocktails-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AAC044599551B035115C1888 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CocktailsTests/Pods-CocktailsTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CocktailsTests/Pods-CocktailsTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CocktailsTests/Pods-CocktailsTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F24132EB6B48E47853B797FF /* [CP] Embed Pods Frameworks */ = {
