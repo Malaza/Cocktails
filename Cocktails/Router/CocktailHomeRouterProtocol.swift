@@ -11,5 +11,9 @@ protocol CocktailHomeRouterProtocol {
     
     var view: (CocktailHomeViewProtocol & UIViewController)? { get }
     
-    static func start() -> CocktailHomeRouter
+    static func start() -> CocktailHomeRouterProtocol
+    
+    
+    func presentDetailViewController(controller: UIViewController, model: CocktailModel?)
+    func presentSearchViewController()
 }

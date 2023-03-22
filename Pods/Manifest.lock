@@ -1,0 +1,22 @@
+PODS:
+  - Cuckoo (1.10.0):
+    - Cuckoo/Swift (= 1.10.0)
+  - Cuckoo/Swift (1.10.0)
+  - lottie-ios (4.1.3)
+
+DEPENDENCIES:
+  - Cuckoo
+  - lottie-ios
+
+SPEC REPOS:
+  trunk:
+    - Cuckoo
+    - lottie-ios
+
+SPEC CHECKSUMS:
+  Cuckoo: acf02d4702eb3112dbc438a057fe3110bc3608cd
+  lottie-ios: d0954d3150061f662ed0adf96ef98d7421864c47
+
+PODFILE CHECKSUM: 8ad5d6cb9b04c0a1882dd07c0e5cd925785a3a91
+
+COCOAPODS: 1.12.0

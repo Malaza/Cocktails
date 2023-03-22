@@ -7,7 +7,7 @@
 
 import Foundation
 
-typealias GetCompletion = (Any?, CocktailServiceError) -> Void
+typealias GetCompletion = (Any?, CocktailServiceError?) -> Void
 
 protocol CocktailServiceProtocol {
     func executeFetchList(completion: @escaping GetCompletion)
@@ -20,13 +20,18 @@ enum CocktailServiceMethod: String {
     case post = "POST"
 }
 
+
 public enum CocktailServiceError: Error {
     case failed
 }
 
 class CocktailService: CocktailServiceProtocol {
     
+    var completion: GetCompletion?
+    
     func executeFetchList(completion: @escaping GetCompletion) {
+        
+        self.completion = completion
         
         let request = NSMutableURLRequest(url: NSURL(string: "https://the-cocktail-db.p.rapidapi.com/popular.php")! as URL,
                                           cachePolicy: .useProtocolCachePolicy,
@@ -37,11 +42,13 @@ class CocktailService: CocktailServiceProtocol {
         
         let dataTask = URLSession.shared.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
             
-            if (error != nil) {
-                completion(nil, .failed)
-            }
-            else {
-                completion(data, .failed)
+            DispatchQueue.main.async() {
+                if (error != nil) {
+                    self.completion!(nil, .failed)
+                }
+                else {
+                    self.completion!(data, nil)
+                }
             }
         })
         
@@ -59,11 +66,33 @@ class CocktailService: CocktailServiceProtocol {
         
         let dataTask = URLSession.shared.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
             
-            if (error != nil) {
-                completion(nil, .failed)
+            DispatchQueue.main.async() {
+                if (error != nil) {
+                    completion(nil, .failed)
+                }
+                else {
+                    completion(data, nil)
+                }
             }
-            else {
-                completion(data, .failed)
+        })
+        
+        dataTask.resume()
+    }
+    
+    public static func executeImageDownload(url: URL, completion: @escaping GetCompletion) {
+        
+        let request = NSMutableURLRequest(url: url,
+                                          cachePolicy: .useProtocolCachePolicy,
+                                          timeoutInterval: 10.0)
+        
+        let dataTask = URLSession.shared.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
+            
+            guard let data = data, error == nil else {
+                completion(nil, .failed)
+                return
+            }
+            DispatchQueue.main.async() {
+                completion(data, nil)
             }
         })
         
