@@ -25,9 +25,11 @@ public enum CocktailServiceError: Error {
     case failed
 }
 
+
 class CocktailService: CocktailServiceProtocol {
     
     var completion: GetCompletion?
+    
     
     func executeFetchList(completion: @escaping GetCompletion) {
         
@@ -91,11 +93,8 @@ class CocktailService: CocktailServiceProtocol {
                 completion(nil, .failed)
                 return
             }
-            DispatchQueue.main.async() {
-                completion(data, nil)
-            }
+            completion(data, nil)
         })
-        
         dataTask.resume()
     }
     
