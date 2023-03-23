@@ -79,6 +79,14 @@ class CocktailHomeViewController: UIViewController {
     @objc private func refreshTableView() {
         self.fetchCocktailList()
     }
+    
+    private func showError(error: String?, completion:@escaping(UIAlertAction) -> Void) {
+        let alert = UIAlertController(title: "Cocktail Fail",
+                                      message: error,
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Retry", style: .default, handler: completion))
+        self.present(alert, animated: true, completion: nil)
+    }
 }
 
 
@@ -132,6 +140,12 @@ extension CocktailHomeViewController: CocktailHomeViewProtocol {
     }
     
     func updateOnFailure(with error: String) {
-        //Add retry mech
+        self.showError(error: error) { alert in
+            self.hideLoadingView()
+            self.fetchCocktailList()
+        }
     }
 }
+
+
+
