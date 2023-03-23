@@ -1,8 +1,8 @@
 # Installation
 
 After downloading the project, please run "pod install" on the command line, on the root folder of the project where the podfile is.
-
 Once done, in order to build the project, you should run the Cocktails.xcworkspace file, to take into consideration the pod files.
+
 
 # Architecture
 
@@ -14,20 +14,23 @@ I used the open API from https://rapidapi.com/thecocktaildb/api/the-cocktail-db.
 
 I added the optional functionality, namely the search functionality, as well as pull to refresh on the main UI, which runs a service call when the tableView is refreshed
 
+
 # Testing
 
 Because of time constraints, I didn't prioritize the testing functionality, although I added the Cuckoo testing framework into the project.
+
 
 # Design
 
 The design and color scheme on the project is inspired by this Dribbble project: https://dribbble.com/shots/8899481-My-Bar-Cocktail-app-Full-flow/attachments/1069490?mode=media
 
-# Whats missing?
-
 
 # Security
 
 On the function **private func getAuthHeaders() -> [String: String]**, I have openly left the **X-RapidAPI-Key** openly exposed, without encrypting it, Github even flagged it as a vulnerability in the project, because of the disposable nature of this project, I didn't take steps to secure/encrypt the key, but I understand the importance of doing so, one way I would have done that, is by keeping the key in the Keychain.
+
+
+# Whats missing?
 
 There are some items I intentionally left out, because it wasn't priority or its negligible functionality.
 
