@@ -27,7 +27,7 @@ The design and color scheme on the project is inspired by this Dribbble project:
 
 # Security
 
-On the function **private func getAuthHeaders() -> [String: String]**, I have openly left the **X-RapidAPI-Key** openly exposed, without encrypting it, Github even flagged it as a vulnerability in the project, because of the disposable nature of this project, I didn't take steps to secure/encrypt the key, but I understand the importance of doing so, one way I would have done that, is by keeping the key in the Keychain.
+On the function **private func getAuthHeaders() -> [String: String]**, I have left the **X-RapidAPI-Key** openly exposed, without encrypting it, Github even flagged it as a vulnerability in the project, because of the disposable nature of this project, I didn't take steps to secure/encrypt the key, but I understand the importance of doing so, one way I would have done that, is by keeping the key in the Keychain.
 
 
 # Whats missing?
