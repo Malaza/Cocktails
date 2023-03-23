@@ -24,6 +24,11 @@ The design and color scheme on the project is inspired by this Dribbble project:
 
 # Whats missing?
 
+
+# Security
+
+On the function **private func getAuthHeaders() -> [String: String]**, I have openly left the **X-RapidAPI-Key** openly exposed, without encrypting it, Github even flagged it as a vulnerability in the project, because of the disposable nature of this project, I didn't take steps to secure/encrypt the key, but I understand the importance of doing so, one way I would have done that, is by keeping the key in the Keychain.
+
 There are some items I intentionally left out, because it wasn't priority or its negligible functionality.
 
 When you search, ideally there should be live filtering on the array, which means anything that returns true is added to the array, and anything that is outside the filter scope is removed, actively, but this process happens only once when you search. I believe an alternative approach would have been to have to have temp array from which we filter, and the original data array which we do not modify in order to keep the full list of items available for searching.
