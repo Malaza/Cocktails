@@ -9,25 +9,23 @@ import UIKit
 import Foundation
 import Lottie
 
-//private var animationView: AnimationView?
+private var animationView: LottieAnimationView?
 
-//extension UIViewController {
-//
-//    func showLoadingView() {
-//
-//
-//
-//          // 2. Start AnimationView with animation name (without extension)
-//          animationView = .init(name: "coffee")
-//          animationView!.frame = view.bounds
-//          // 3. Set animation content mode
-//          animationView!.contentMode = .scaleAspectFit
-//          // 4. Set animation loop mode
-//          animationView!.loopMode = .loop
-//          // 5. Adjust animation speed
-//          animationView!.animationSpeed = 0.5
-//          view.addSubview(animationView!)
-//          // 6. Play animation
-//          animationView!.play()
-//    }
-//}
+extension UIViewController {
+    
+    func showLoadingView() {
+        animationView = .init(name: "drink")
+        animationView?.backgroundColor = .white
+        animationView!.frame = self.view.bounds
+        animationView!.contentMode = .scaleAspectFit
+        animationView!.loopMode = .loop
+        animationView!.animationSpeed = 0.4
+        self.view.addSubview(animationView!)
+        animationView!.play()
+    }
+    
+    func hideLoadingView() {
+        animationView?.stop()
+        animationView?.removeFromSuperview()
+    }
+}
