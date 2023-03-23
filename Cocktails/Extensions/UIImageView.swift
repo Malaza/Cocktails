@@ -23,13 +23,15 @@ extension UIImageView {
         }
         CocktailService.executeImageDownload(url: url) { (data, error) in
             
-            if error == nil {
-                guard let imageToCache = UIImage(data: data as! Data) else { return }
-                imageCache.setObject(imageToCache, forKey: urlSting as AnyObject)
-                self.image = UIImage(data: data as! Data)
-            }
-            else {
-                self.image = UIImage(named: "noImage")
+            DispatchQueue.main.async() {
+                if error == nil {
+                    guard let imageToCache = UIImage(data: data as! Data) else { return }
+                    imageCache.setObject(imageToCache, forKey: urlSting as AnyObject)
+                    self.image = UIImage(data: data as! Data)
+                }
+                else {
+                    self.image = UIImage(named: "noImage")
+                }
             }
         }
     }
