@@ -72,6 +72,7 @@ class CocktailHomeViewController: UIViewController {
     
     //MARK: - Helper methods
     private func fetchCocktailList() {
+        self.showLoadingView()
         self.presenter?.fetchCocktailList()
     }
     
@@ -126,6 +127,7 @@ extension CocktailHomeViewController: CocktailHomeViewProtocol {
         if refreshControl.isRefreshing {
             self.refreshControl.endRefreshing()
         }
+        self.hideLoadingView()
         self.tableView.reloadData()
     }
     

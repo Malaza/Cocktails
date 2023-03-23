@@ -10,6 +10,7 @@
 		079FB94EB2A67A016CEF8B71 /* Pods_CocktailsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A75AF2746347CA7811841656 /* Pods_CocktailsTests.framework */; };
 		557D342B93ACF867FECAA7C3 /* Pods_Cocktails_CocktailsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32504CD25BB6CE897C499A97 /* Pods_Cocktails_CocktailsUITests.framework */; };
 		5934CA1929CB2EA40064579F /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5934CA1829CB2EA40064579F /* UIViewController.swift */; };
+		5946B13F29CC10D100F5BC1E /* drink.json in Resources */ = {isa = PBXBuildFile; fileRef = 5946B13E29CC10D100F5BC1E /* drink.json */; };
 		59B18CD529C9F1090095C5A8 /* CocktailHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B18CD329C9F1090095C5A8 /* CocktailHomeTableViewCell.swift */; };
 		59B18CD629C9F1090095C5A8 /* CocktailHomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59B18CD429C9F1090095C5A8 /* CocktailHomeTableViewCell.xib */; };
 		59B18CDA29C9F1C20095C5A8 /* CocktailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B18CD929C9F1C20095C5A8 /* CocktailModel.swift */; };
@@ -35,7 +36,6 @@
 		59DA0D8429C9B72200A6910D /* CocktailHomeInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DA0D8329C9B72200A6910D /* CocktailHomeInteractorProtocol.swift */; };
 		59DA0D8629C9B72C00A6910D /* CocktailHomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DA0D8529C9B72C00A6910D /* CocktailHomeInteractor.swift */; };
 		59DA0D8929C9C2A600A6910D /* CocktailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DA0D8829C9C2A600A6910D /* CocktailService.swift */; };
-		59DA0D8C29C9D02400A6910D /* Test.json in Resources */ = {isa = PBXBuildFile; fileRef = 59DA0D8B29C9D02400A6910D /* Test.json */; };
 		59DA0D8E29C9D12700A6910D /* CocktailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DA0D8D29C9D12700A6910D /* CocktailResponse.swift */; };
 		F43EE481694272C66B8C263D /* Pods_Cocktails.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED7A8BB0710AF4C037711D3 /* Pods_Cocktails.framework */; };
 /* End PBXBuildFile section */
@@ -63,6 +63,7 @@
 		32504CD25BB6CE897C499A97 /* Pods_Cocktails_CocktailsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cocktails_CocktailsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BA831A85082C2DD1C6BCE9F /* Pods-CocktailsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocktailsTests.debug.xcconfig"; path = "Target Support Files/Pods-CocktailsTests/Pods-CocktailsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5934CA1829CB2EA40064579F /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		5946B13E29CC10D100F5BC1E /* drink.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = drink.json; sourceTree = "<group>"; };
 		59B18CD329C9F1090095C5A8 /* CocktailHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailHomeTableViewCell.swift; sourceTree = "<group>"; };
 		59B18CD429C9F1090095C5A8 /* CocktailHomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CocktailHomeTableViewCell.xib; sourceTree = "<group>"; };
 		59B18CD929C9F1C20095C5A8 /* CocktailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailModel.swift; sourceTree = "<group>"; };
@@ -92,7 +93,6 @@
 		59DA0D8329C9B72200A6910D /* CocktailHomeInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailHomeInteractorProtocol.swift; sourceTree = "<group>"; };
 		59DA0D8529C9B72C00A6910D /* CocktailHomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailHomeInteractor.swift; sourceTree = "<group>"; };
 		59DA0D8829C9C2A600A6910D /* CocktailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailService.swift; sourceTree = "<group>"; };
-		59DA0D8B29C9D02400A6910D /* Test.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Test.json; sourceTree = "<group>"; };
 		59DA0D8D29C9D12700A6910D /* CocktailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailResponse.swift; sourceTree = "<group>"; };
 		6ABBD42E404910FFFFA100CF /* Pods-CocktailsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocktailsTests.release.xcconfig"; path = "Target Support Files/Pods-CocktailsTests/Pods-CocktailsTests.release.xcconfig"; sourceTree = "<group>"; };
 		737965CD65759A71666A2AAD /* Pods-Cocktails.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cocktails.release.xcconfig"; path = "Target Support Files/Pods-Cocktails/Pods-Cocktails.release.xcconfig"; sourceTree = "<group>"; };
@@ -218,7 +218,7 @@
 				59DA0D6929C9A4C000A6910D /* AppDelegate */,
 				59DA0D4229C99B5D00A6910D /* Assets.xcassets */,
 				59DA0D4729C99B5D00A6910D /* Info.plist */,
-				59DA0D8B29C9D02400A6910D /* Test.json */,
+				5946B13E29CC10D100F5BC1E /* drink.json */,
 			);
 			path = Cocktails;
 			sourceTree = "<group>";
@@ -472,11 +472,11 @@
 			files = (
 				59B18CE429CA70280095C5A8 /* CocktailDetailViewController.xib in Resources */,
 				59DA0D4629C99B5D00A6910D /* LaunchScreen.storyboard in Resources */,
+				5946B13F29CC10D100F5BC1E /* drink.json in Resources */,
 				59DA0D7729C9A70800A6910D /* CocktailHomeViewController.xib in Resources */,
 				59DA0D4329C99B5D00A6910D /* Assets.xcassets in Resources */,
 				59DA0D4129C99B5B00A6910D /* Main.storyboard in Resources */,
 				59B18CD629C9F1090095C5A8 /* CocktailHomeTableViewCell.xib in Resources */,
-				59DA0D8C29C9D02400A6910D /* Test.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
